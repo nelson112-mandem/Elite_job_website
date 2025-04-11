@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - JobElite</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #2c3e50, #4ca1af);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .login-container h1 {
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    .login-container form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      margin-bottom: 5px;
+      font-size: 14px;
+      display: block;
+      text-align: left;
+    }
+
+    .form-group input {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      width: 100%;
+      outline: none;
+    }
+
+    .form-group input:focus {
+      box-shadow: 0 0 5px #00f2fe;
+    }
+
+    .login-btn {
+      padding: 12px;
+      font-size: 16px;
+      color: #fff;
+      background: #00f2fe;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .login-btn:hover {
+      background: #007BFF;
+    }
+
+    .alt-links {
+      margin-top: 20px;
+    }
+
+    .alt-links a {
+      color: #00f2fe;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .alt-links a:hover {
+      color: #007BFF;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h1>Login to JobElite</h1>
+    <form action="/dashboard" method="POST">
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+      </div>
+      <button type="submit" class="login-btn">Login</button>
+    </form>
+    <div class="alt-links">
+      <p>Don't have an account? <a href="/register">Sign Up</a></p>
+      <p><a href="/forgot-password">Forgot Password?</a></p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: relative;
+        }
+        header .return-icon {
+            position: absolute;
+            left: 20px;
+            top: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            color: white;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .resume-list, .application-history {
+            margin: 20px 0;
+        }
+        .resume-list ul, .application-history ul {
+            list-style: none;
+            padding: 0;
+        }
+        .resume-list ul li, .application-history ul li {
+            background: #f9f9f9;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <span class="return-icon" onclick="window.history.back();">&larr; Return <a href=""></a> </span>
+        <h1>User Profile</h1>
+    </header>
+    <div class="container">
+        <section>
+            <h2>Resume Upload</h2>
+            <form>
+                <div class="form-group">
+                    <label for="resume-upload">Upload Resume:</label>
+                    <input type="file" id="resume-upload" name="resume-upload">
+                </div>
+                <button type="submit" class="btn">Upload</button>
+            </form>
+            <div class="resume-list">
+                <h3>Uploaded Resumes</h3>
+                <ul>
+                    <li>
+                        <p>Resume - John Doe.pdf</p>
+                        <button class="btn">Delete</button>
+                    </li>
+                    <!-- Additional uploaded resumes can go here -->
+                </ul>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Application History</h2>
+            <div class="application-history">
+                <ul>
+                    <li>
+                        <h3>Software Developer</h3>
+                        <p>Company: Tech Solutions</p>
+                        <p>Location: Lusaka, Zambia</p>
+                        <p>Status: In Review</p>
+                    </li>
+                    <!-- Additional application history items can go here -->
+                </ul>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

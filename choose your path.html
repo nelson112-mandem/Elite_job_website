@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Choose Your Path - JobElite</title>
+  <style>
+    /* Darker background gradient */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #2c3e50, #4ca1af);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      font-size: 32px;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    /* The main container centers the choices */
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 20px;
+    }
+
+    .choice-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 15px;
+      width: 300px;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    }
+
+    .card h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 16px;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .card a {
+      display: inline-block;
+      padding: 12px 24px;
+      color: #fff;
+      text-decoration: none;
+      background: #00f2fe;
+      border-radius: 25px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .card a:hover {
+      background: #007bff;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      .choice-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to JobElite</h1>
+    <p>What would you like to do today?</p>
+  </header>
+  <main>
+    <section class="choice-container">
+      <div class="card">
+        <h2>Find a Job</h2>
+        <p>
+          Explore a wide range of job opportunities tailored to your skills and passions.
+        </p>
+        <a href="/jobs">Search Jobs</a>
+      </div>
+      <div class="card">
+        <h2>Post a Job</h2>
+        <p>
+          Reach qualified candidates by posting your job openings quickly and easily.
+        </p>
+        <a href="/post-job">Post a Job</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

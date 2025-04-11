@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Find Jobs - JobElite</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #2c3e50, #4ca1af);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    main {
+      flex: 1;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    
+    /* Search Section */
+    .search-container {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .search-container input,
+    .search-container select {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .search-container input:focus,
+    .search-container select:focus {
+      box-shadow: 0 0 10px #00f2fe;
+    }
+
+    .search-container button {
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 25px;
+      background: #00f2fe;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .search-container button:hover {
+      background: #007bff;
+      transform: scale(1.05);
+    }
+
+    /* Job Listings Grid */
+    .job-listings {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .job-card {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+    }
+
+    .job-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Company logo styling */
+    .company-logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 2px solid #00f2fe;
+    }
+
+    .job-card h2 {
+      font-size: 22px;
+      margin: 0 0 10px;
+    }
+
+    .job-card p {
+      font-size: 14px;
+      margin: 5px 0;
+    }
+
+    .apply-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 10px;
+      text-decoration: none;
+      background: #00f2fe;
+      color: #fff;
+      border-radius: 25px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .apply-btn:hover {
+      background: #007bff;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      .search-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Find Your Dream Job</h1>
+  </header>
+  <main>
+    <div class="search-container">
+      <input type="text" placeholder="Keyword (e.g., Software Engineer)" />
+      <input type="text" placeholder="Location (e.g., Lusaka)" />
+      <select>
+        <option value="">Job Type</option>
+        <option value="full-time">Full-time</option>
+        <option value="part-time">Part-time</option>
+        <option value="contract">Contract</option>
+        <option value="internship">Internship</option>
+      </select>
+      <button>Search</button>
+    </div>
+    
+    <div class="job-listings">
+      <div class="job-card">
+        <img src="https://via.placeholder.com/80" alt="Tech Innovations Inc." class="company-logo">
+        <h2>Software Engineer</h2>
+        <p><strong>Company:</strong> Tech Innovations Inc.</p>
+        <p><strong>Location:</strong> Remote</p>
+        <p><strong>Experience:</strong> 3+ years</p>
+        <p><strong>Salary:</strong> $75,000 - $90,000/year</p>
+        <a href="#" class="apply-btn">Apply Now</a>
+      </div>
+      
+      <div class="job-card">
+        <img src="https://via.placeholder.com/80" alt="Creative Works LLC" class="company-logo">
+        <h2>Marketing Specialist</h2>
+        <p><strong>Company:</strong> Creative Works LLC</p>
+        <p><strong>Location:</strong> Lusaka, Zambia</p>
+        <p><strong>Experience:</strong> 2+ years</p>
+        <p><strong>Salary:</strong> Competitive</p>
+        <a href="#" class="apply-btn">Apply Now</a>
+      </div>
+      
+      <div class="job-card">
+        <img src="https://via.placeholder.com/80" alt="Design Studio Co." class="company-logo">
+        <h2>Graphic Designer</h2>
+        <p><strong>Company:</strong> Design Studio Co.</p>
+        <p><strong>Location:</strong> Nairobi, Kenya</p>
+        <p><strong>Experience:</strong> 1+ year</p>
+        <p><strong>Salary:</strong> $40,000 - $55,000/year</p>
+        <a href="#" class="apply-btn">Apply Now</a>
+      </div>
+      <!-- Additional job cards can be added as needed -->
+    </div>
+  </main>
+</body>
+</html>

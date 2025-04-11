@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Started - JobElite</title>
+  <style>
+    /* Reset and Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #2c3e50, #4ca1af);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    /* Animated Background Layer */
+
+    a{
+      text-decoration: none;
+      text-decoration: blink;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .video-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover; /* Replace with a high-quality background image */
+      animation: zoom 20s infinite alternate;
+      opacity: 0.3;
+    }
+    @keyframes zoom {
+      from { transform: scale(1); }
+      to { transform: scale(1.1); }
+    }
+    /* Overlay for Content */
+    .overlay {
+      position: relative;
+      z-index: 2;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header {
+      margin-bottom: 40px;
+    }
+    header h1 {
+      font-size: 48px;
+      animation: slideDown 1s ease-out;
+    }
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .get-started-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .get-started-container h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      animation: fadeIn 2s ease;
+    }
+    .get-started-container p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      line-height: 1.5;
+      animation: fadeIn 2s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    /* Call to Action Button */
+    .btn {
+      display: inline-block;
+      padding: 15px 35px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      background: #00f2fe;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+      animation: fadeIn 2.5s ease;
+      margin-bottom: 40px;
+    }
+    .btn:hover {
+      background: #007bff;
+      transform: scale(1.05);
+    }
+    /* Steps Section */
+    .steps {
+      margin-top: 50px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      animation: fadeIn 3s ease;
+    }
+    .step {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+      width: 250px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .step:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    }
+    .step h3 {
+      margin-bottom: 15px;
+      font-size: 22px;
+    }
+    .step p {
+      font-size: 16px;
+      line-height: 1.4;
+    }
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.7);
+      animation: fadeIn 3s ease;
+    }
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 36px;
+      }
+      .get-started-container h2 {
+        font-size: 28px;
+      }
+      .get-started-container p, footer {
+        font-size: 16px;
+      }
+      .step {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="video-bg"></div>
+  <div class="overlay">
+    <header>
+      <h1>Welcome to JobElite</h1>
+    </header>
+    <div class="get-started-container">
+      <h2>Embark on Your Career Adventure</h2>
+      <p>
+        At JobElite, we believe every journey begins with a single step. Whether you're searching for your dream job or seeking the perfect candidate, our platform is designed to propel you forward. Let's transform your future together!
+      </p>
+      <button class="btn"><a href="elitelogin.html">Get Started Now</a></button>
+      <div class="steps">
+        <div class="step">
+          <h3>Sign Up</h3>
+          <p>Create an account effortlessly using your email or social media.</p>
+        </div>
+        <div class="step">
+          <h3>Build Your Profile</h3>
+          <p>Showcase your skills and experience to stand out from the crowd.</p>
+        </div>
+        <div class="step">
+          <h3>Explore Opportunities</h3>
+          <p>Browse thousands of curated job listings tailored just for you.</p>
+        </div>
+        <div class="step">
+          <h3>Network & Grow</h3>
+          <p>Connect with industry leaders and expand your professional circle.</p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>© 2025 JobElite. Your Future, Elevated.</p>
+    </footer>
+  </div>
+</body>
+</html>

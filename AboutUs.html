@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - JobElite</title>
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #2c3e50, #00172D);
+      color: #fff;
+      line-height: 1.6;
+    }
+    
+    a {
+      text-decoration: none;
+      color: #fff;
+      transition: color 0.3s ease;
+    }
+    
+    a:hover {
+      color: #00f2fe;
+    }
+    
+    /* Header and Navigation */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: rgba(0, 0, 0, 0.7);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    header .logo h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    
+    nav ul li {
+      margin-left: 25px;
+    }
+    }
+    
+    nav ul li a {
+      font-size: 16px;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+    
+    nav ul li a:hover {
+      background: rgba(0, 242, 254, 0.2);
+    }
+    
+    /* About Content Container */
+    .about-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    
+    .about-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .about-header h2 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+    
+    .about-header p {
+      font-size: 20px;
+    }
+    
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .about-image img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    
+    .about-text {
+      flex: 2;
+      min-width: 300px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    
+    .section {
+      margin-bottom: 40px;
+    }
+    
+    .section h3 {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+    
+    .section p {
+      margin-bottom: 16px;
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.7);
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .about-content {
+        flex-direction: column;
+      }
+      
+      .about-header h2 {
+        font-size: 32px;
+      }
+      
+      .about-header p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header and Navigation -->
+  <header>
+    <div class="logo">
+      <h1>JobElite</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/jobs">Jobs</a></li>
+        <li><a href="/post-job">Post a Job</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- Main About Us Section -->
+  <div class="about-container">
+    <div class="about-header">
+      <h2>About JobElite</h2>
+      <p>Your trusted partner in career and recruitment solutions.</p>
+    </div>
+    <div class="about-content">
+      <div class="about-image">
+        <img class="blend" src="Logo1.png" alt="JobElite Office">
+      </div>
+      <div class="about-text">
+        <div class="section">
+          <h3>Our Mission</h3>
+          <p>
+            At JobElite, our mission is to connect top-tier talent with world-class companies. We provide a seamless, user-friendly platform that empowers job seekers and employers alike by simplifying the recruitment process and fostering meaningful connections.
+          </p>
+        </div>
+        <div class="section">
+          <h3>Our Vision</h3>
+          <p>
+            We envision a future where every individual has access to opportunities that align with their potential, and every organization can effortlessly find the perfect fit for their team. Our commitment to innovation and excellence drives us to continually improve our platform and services.
+          </p>
+        </div>
+        <div class="section">
+          <h3>Our Journey</h3>
+          <p>
+            Founded in 2025, JobElite was born out of a desire to revolutionize the job market. With a passion for technology and a commitment to excellence, we've grown into a trusted partner for both job seekers and employers, consistently pushing the boundaries of what's possible in the recruitment industry.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 JobElite. All rights reserved.</p>
+  </footer>
+</body>
+</html>

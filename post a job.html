@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Post a Job - JobElite</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #2c3e50, #4ca1af);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 20px;
+    }
+
+    .form-container {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 600px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .form-container:hover {
+      transform: scale(1.02);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group label {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      outline: none;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      box-shadow: 0 0 8px #00f2fe;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .submit-btn {
+      padding: 14px;
+      font-size: 16px;
+      background: #00f2fe;
+      border: none;
+      border-radius: 25px;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background: #007bff;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Post a Job on JobElite</h1>
+  </header>
+  <main>
+    <div class="form-container">
+      <form action="/submit-job" method="POST">
+        <div class="form-group">
+          <label for="job-title">Job Title</label>
+          <input type="text" id="job-title" name="job-title" placeholder="Enter the job title" required>
+        </div>
+        <div class="form-group">
+          <label for="company-name">Company Name</label>
+          <input type="text" id="company-name" name="company-name" placeholder="Enter your company name" required>
+        </div>
+        <div class="form-group">
+          <label for="job-location">Location</label>
+          <input type="text" id="job-location" name="job-location" placeholder="City, State, Country" required>
+        </div>
+        <div class="form-group">
+          <label for="job-type">Job Type</label>
+          <select id="job-type" name="job-type" required>
+            <option value="">Select job type</option>
+            <option value="full-time">Full-time</option>
+            <option value="part-time">Part-time</option>
+            <option value="contract">Contract</option>
+            <option value="internship">Internship</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="salary">Salary / Compensation</label>
+          <input type="text" id="salary" name="salary" placeholder="e.g. $50,000 - $70,000 per year">
+        </div>
+        <div class="form-group">
+          <label for="job-description">Job Description</label>
+          <textarea id="job-description" name="job-description" placeholder="Describe the role, responsibilities, and qualifications" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="application-contact">Application Email / URL</label>
+          <input type="email" id="application-contact" name="application-contact" placeholder="Enter your application email or link" required>
+        </div>
+        <button type="submit" class="submit-btn">Submit Job</button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>
