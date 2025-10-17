@@ -1,114 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Login - JobElite</title>
   <style>
+    :root{
+      --bg-start: #2c3e50;
+      --bg-end: #4ca1af;
+      --accent: #00f2fe;
+      --accent-2: #007BFF;
+      --container-bg: rgba(0,0,0,0.8);
+      --input-bg: rgba(255,255,255,0.06);
+      --input-border: rgba(255,255,255,0.12);
+      --text: #ffffff;
+      --muted: rgba(255,255,255,0.75);
+      --error: #ffb4b4;
+    }
+
+    html, body { height: 100%; margin: 0; }
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #2c3e50, #4ca1af);
-      color: #fff;
+      background: linear-gradient(to right, var(--bg-start), var(--bg-end));
+      color: var(--text);
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     .login-container {
-      background: rgba(0, 0, 0, 0.8);
-      padding: 40px;
+      background: var(--container-bg);
+      padding: 32px;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      text-align: center;
-      width: 90%;
-      max-width: 400px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+      width: 92%;
+      max-width: 420px;
+      box-sizing: border-box;
     }
 
-    .login-container h1 {
-      margin-bottom: 20px;
-      font-size: 28px;
-    }
-
-    .login-container form {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .form-group {
-      margin-bottom: 15px;
-    }
-
-    .form-group label {
-      margin-bottom: 5px;
-      font-size: 14px;
-      display: block;
+    h1 {
+      margin: 0 0 16px;
+      font-size: 22px;
+      line-height: 1.2;
       text-align: left;
     }
 
-    .form-group input {
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      font-size: 14px;
-      width: 100%;
-      outline: none;
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 8px;
     }
 
-    .form-group input:focus {
-      box-shadow: 0 0 5px #00f2fe;
+    .form-group { text-align: left; }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      padding: 10px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      width: 100%;
+      border: 1px solid var(--input-border);
+      background: var(--input-bg);
+      color: var(--text);
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    input::placeholder { color: rgba(255,255,255,0.6); }
+
+    input:focus {
+      box-shadow: 0 0 0 3px rgba(0,242,254,0.10);
+      border-color: var(--accent);
+    }
+
+    .password-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .toggle-password {
+      background: transparent;
+      border: 1px solid var(--input-border);
+      color: var(--text);
+      padding: 8px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+    .toggle-password:focus {
+      outline: 3px solid rgba(0,242,254,0.12);
     }
 
     .login-btn {
       padding: 12px;
       font-size: 16px;
-      color: #fff;
-      background: #00f2fe;
+      color: #06202a;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
       border: none;
-      border-radius: 5px;
+      border-radius: 6px;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: transform 0.08s ease, box-shadow 0.08s ease;
     }
-
-    .login-btn:hover {
-      background: #007BFF;
+    .login-btn:hover { transform: translateY(-1px); }
+    .login-btn:focus {
+      outline: 3px solid rgba(0,242,254,0.22);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.35);
     }
 
     .alt-links {
-      margin-top: 20px;
+      margin-top: 14px;
+      font-size: 14px;
+      color: var(--muted);
     }
 
     .alt-links a {
-      color: #00f2fe;
+      color: var(--accent);
       text-decoration: none;
-      transition: color 0.3s ease;
     }
 
-    .alt-links a:hover {
-      color: #007BFF;
+    .alt-links a:focus {
+      outline: 2px dashed rgba(255,255,255,0.12);
+      outline-offset: 2px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .error {
+      color: var(--error);
+      font-size: 13px;
+      margin-top: 6px;
+    }
+
+    @media (max-width:420px) {
+      .login-container { padding: 20px; }
+      h1 { font-size: 20px; }
     }
   </style>
 </head>
 <body>
-  <div class="login-container">
-    <h1>Login to JobElite</h1>
-    <form action="/dashboard" method="POST">
+  <main class="login-container" role="main" aria-labelledby="login-heading">
+    <h1 id="login-heading">Login to JobElite</h1>
+
+    <!-- region for displaying server or client errors -->
+    <div id="form-error" class="error" role="alert" aria-live="assertive" hidden></div>
+
+    <!--
+      NOTE:
+      - Use your server's login endpoint here. Common pattern: POST /login (server authenticates -> redirects to /dashboard)
+      - Ensure the server validates credentials, enforces HTTPS and emits a CSRF token.
+    -->
+    <form id="loginForm" action="/login" method="POST" autocomplete="on" novalidate>
+      <!-- Insert a server-generated CSRF token here.
+           Example for common frameworks:
+             - Express (csurf + EJS): <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+             - Django templates: {% csrf_token %}
+             - Flask-WTF: {{ form.csrf_token }}
+      -->
+      <!-- Example placeholder (remove or replace with server template): -->
+      <!-- <input type="hidden" name="_csrf" value="{{csrfToken}}"> -->
+
       <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <label for="email">Email address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="you@example.com"
+          required
+          autocomplete="email"
+          autofocus
+        />
       </div>
+
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        <div class="password-row">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+            autocomplete="current-password"
+            minlength="8"
+            aria-describedby="password-hint"
+          />
+          <button type="button" class="toggle-password" id="togglePassword" aria-pressed="false" aria-label="Show password">Show</button>
+        </div>
+        <div id="password-hint" class="sr-only">Password must be at least 8 characters.</div>
       </div>
+
       <button type="submit" class="login-btn">Login</button>
     </form>
+
     <div class="alt-links">
-      <p>Don't have an account? <a href="/register">Sign Up</a></p>
-      <p><a href="/forgot-password">Forgot Password?</a></p>
+      <p>Don't have an account? <a href="/register">Sign up</a></p>
+      <p><a href="/forgot-password">Forgot password?</a></p>
     </div>
-  </div>
+  </main>
+
+  <script>
+    // Small, unobtrusive enhancements:
+    // 1) Toggle password visibility (improves UX)
+    // 2) Display an error message if server included it in a query param (?error=...)
+    (function () {
+      var toggleBtn = document.getElementById('togglePassword');
+      var pwd = document.getElementById('password');
+      var formError = document.getElementById('form-error');
+
+      toggleBtn.addEventListener('click', function () {
+        var showing = pwd.type === 'text';
+        pwd.type = showing ? 'password' : 'text';
+        toggleBtn.textContent = showing ? 'Show' : 'Hide';
+        toggleBtn.setAttribute('aria-pressed', (!showing).toString());
+        toggleBtn.setAttribute('aria-label', (!showing) ? 'Hide password' : 'Show password');
+      });
+
+      // Show server error passed as a URL-encoded query parameter, e.g. ?error=Invalid+credentials
+      try {
+        var params = new URLSearchParams(window.location.search);
+        var error = params.get('error');
+        if (error) {
+          formError.textContent = decodeURIComponent(error);
+          formError.hidden = false;
+        }
+      } catch (e) {
+        // ignore URL API errors in very old browsers
+      }
+
+      // Optional: prevent accidental submission if minlength not satisfied (enhance client-side feedback)
+      var form = document.getElementById('loginForm');
+      form.addEventListener('submit', function (ev) {
+        if (!form.checkValidity()) {
+          ev.preventDefault();
+          // Let browser show native validation UI; for custom UI we would set formError.textContent here.
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
